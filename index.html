@@ -177,25 +177,13 @@
                 }
             </script>
 
-        <!--this is the little blocks that update by consecutively turning black one at a time when you are mining so that the user understands it is working-->    
-        <div style='width:100%;margin-left:0;margin-right:0;margin-top:10px;height:25px;border:none;'>
-            <svg viewbox="0, 0, 400, 10">
-                <rect id='rect1'  x="0" y="0" width="38" height="10" fill='#cccccc' />
-                <rect id='rect2'  x="40" y="0" width="38" height="10" fill='#cccccc' />
-                <rect id='rect3'  x="80" y="0" width="38" height="10" fill='#cccccc' />
-                <rect id='rect4'  x="120" y="0" width="38" height="10" fill='#cccccc' />
-                <rect id='rect5'  x="160" y="0" width="38" height="10" fill='#cccccc' />
-                <rect id='rect6'  x="200" y="0" width="38" height="10" fill='#cccccc' />
-                <rect id='rect7'  x="240" y="0" width="38" height="10" fill='#cccccc' />
-                <rect id='rect8'  x="280" y="0" width="38" height="10" fill='#cccccc' />
-                <rect id='rect9'  x="320" y="0" width="38" height="10" fill='#cccccc' />
-                <rect id='rect10' x="360" y="0" width="38" height="10" fill='#cccccc' />
-            </svg>
-        </div>
-        <br>
+       
 
         <h6 id='powMiningRate' class="text-center">...</h6>
           <!--checkbox for the automining feature, just check this and it will mine according to the parameters the user has set-->
+
+          <div class='d-flex'>Mine when reward is ≥<input type='number' min="0" step="0.00001" class='text-center form-control m-2' id='target_mining_rate' value='0.001'></div>
+
         <div class="row">
             <div class="custom-control custom-checkbox m-4">
                 <input type='checkbox' class="custom-control-input" id='checkbox-3' onclick='switch_autominer(this)'>
@@ -249,14 +237,21 @@
             <input type="range" min="1" max="200" step="1.0" class="slider" value='1' id="myRange" oninput="showVal(this.value)" onchange="showVal(this.value)">
         </div>
 
-        <br>
-
-        <div class='d-flex'>Mine when reward is ≥<input type='number' min="0" step="0.00001" class='text-center form-control m-2' id='target_mining_rate' value='0.0008'></div>
-      
-       
-      
-           
-        
+         <!--this is the little blocks that update by consecutively turning black one at a time when you are mining so that the user understands it is working-->    
+        <div style='width:100%;margin-left:0;margin-right:0;margin-top:10px;height:25px;border:none;'>
+            <svg viewbox="0, 0, 400, 10">
+                <rect id='rect1'  x="0" y="0" width="38" height="10" fill='#cccccc' />
+                <rect id='rect2'  x="40" y="0" width="38" height="10" fill='#cccccc' />
+                <rect id='rect3'  x="80" y="0" width="38" height="10" fill='#cccccc' />
+                <rect id='rect4'  x="120" y="0" width="38" height="10" fill='#cccccc' />
+                <rect id='rect5'  x="160" y="0" width="38" height="10" fill='#cccccc' />
+                <rect id='rect6'  x="200" y="0" width="38" height="10" fill='#cccccc' />
+                <rect id='rect7'  x="240" y="0" width="38" height="10" fill='#cccccc' />
+                <rect id='rect8'  x="280" y="0" width="38" height="10" fill='#cccccc' />
+                <rect id='rect9'  x="320" y="0" width="38" height="10" fill='#cccccc' />
+                <rect id='rect10' x="360" y="0" width="38" height="10" fill='#cccccc' />
+            </svg>
+        </div>
 
 
                 <script>
@@ -326,7 +321,7 @@
                             dotransaction_bundle();
                         }
 
-                        time = setTimeout('app_thread()', 5500);
+                        time = setTimeout('app_thread()', 3500);
                     }
                     // function app_thread()
 
